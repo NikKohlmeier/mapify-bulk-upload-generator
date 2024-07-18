@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapify Bulk Inport Generator</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="icon" href="./assets/mbig-icon.svg" type="image/x-icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+	<body>
+		<img class="app-logo" src="./assets/mbig-logo.svg" alt="App logo" />
+		<h1>
+			Mapify Bulk Import Generator
+		</h1>
+		<span>v2.0.0</span>
+		<h2>
+			Purpose:
+		</h2>
+		<p>Generate bulk inport .csv with shortcode descriptions, allowing for more accurate and easy updating</p>
+		<h2>Instructions</h2>
+		<ol>
+			<li>
+				Open a new spreadsheet
+			</li>
+			<li>
+				Copy and paste the following rows (including headers) from the 
+				<a target="_blank" href="https://docs.google.com/spreadsheets/d/1TdNyTvekTBjkzYsL7xSo8hrPYfT_XEWUirOFG4Ph5Ls/edit#gid=216185196">
+					Master SST Info
+				</a> sheet (must be in this specific order):
+				<table>
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Address</td>
+							<td>City</td>
+							<td>State</td>
+							<td>Zip</td>
+							<td>Model</td>
+							<td>Hours</td>
+							<td>County</td>
+							<td>Check</td>
+						</tr>
+					</thead>
+				</table>
+			</li>
+			<li>
+				Paste the new rows in, making sure they're in the correct order
+			</li>
+			<li>
+				Format the hours for the shortcode
+			</li>
+			<em>Example: Mon - Fri: 6:00 AM - 10:00 PM; Saturday: 10:00 AM - 3:00 PM; Sunday: Closed</em>
+				Save and upload the file below
+			</li>
+				<div class="fileUpload__container">
+					<label for="fileInput">Upload file here</label>
+					<input type="file" id="fileInput">
+				</div>
+			<li>
+				The file will automatically download to your computer's download folder (default)
+			</li>
+			<li>
+				Locate file and upload into Mapify
+			</li>
+			<em>MapifyPro -> Batch Upload -> Choose File -> Import (button)</em>
+			<li>
+				All of the locations should start to list if they were imported successfully or not
+			</li>
+			<em>Make a note of any that are unsuccessful, because they will need manually geocoded. Or there is something wrong with the address</em>
+		</ol>
+		<p>And there you have it—a bunch of time saved! That's the hope at least!</p>
+
+		<h2>
+			Debugging errors
+		</h2>
+		<em>If that didn't work...</em>
+		<ul>
+			<li>
+				Ensure the file you uploaded was a csv and not an xls/x
+			</li>
+			<li>
+				Check the browser console for errors
+			</li>
+		</ul>
+
+		<div class="copyright">
+			<p>Copyright ITI <span id="copyright-year"></span></p>
+		</div>
+
+		<script src="script.js"></script>
+
+	</body>
+</html>
